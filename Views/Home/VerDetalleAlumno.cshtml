@@ -9,16 +9,16 @@
     @{
         foreach(Alumnos alumno in @ViewBag.LAlumnos){
             if(alumno.Legajo==@ViewBag.gajo){
-                <p>@alumno.Nombre</p>
-                <p>@alumno.Apellido </p>
-                <p>@alumno.Curso </p>
-                <p>@alumno.Promedio </p>
+                <p>Nombre: @alumno.Nombre</p>
+                <p>Apellido: @alumno.Apellido </p>
+                <p>Curso: @alumno.Curso </p>
+                <p>Promedio: @alumno.Promedio </p>
                 if(@alumno.Promedio<6){
                     <p>Desaprobado</p>
                 }else{
                     <p>Aprobado</p>
                 }
-                <p>@alumno.Especialidad </p>
+                <p>Especialidad: @alumno.Especialidad </p>
             }
         }
     }

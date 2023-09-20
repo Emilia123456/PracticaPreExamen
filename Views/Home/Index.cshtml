@@ -10,24 +10,6 @@
     <title>MostrarAlumnos</title>
 </head>
 <body>
-    @* muestro los alumnos *@
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            Todos los alumnos
-        </div>
-        <ul class="list-group list-group-flush">
-            @{
-                foreach(Alumnos alumno in @ViewBag.LAlumnos){
-                    <li 
-                    class="list-group-item">@alumno.Nombre @alumno.Apellido 
-                    <a href='@Url.Action("VerDetalleAlumno", "Home", new { legajo = alumno.Legajo})'>Más información</a>
-                    </li>
-                    
-                }
-            }
-        </ul>
-    </div>
-
     @* muestro los alumnos aprobados *@
     <div class="card" style="width: 18rem;">
         <div class="card-header">
