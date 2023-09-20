@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Reflection.Metadata;
 using Microsoft.AspNetCore.Mvc;
 using PracticaPreExamen.Models;
 
@@ -15,7 +16,20 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        List<Alumnos> ListaAlumnos = BD.TraerAlumnos();
+        ViewBag.LAlumnos = ListaAlumnos; 
         return View();
+    }
+
+    public IActionResult VerDetalleAlumno(string legajo)
+    {
+        List<Alumnos> ListaAlumnos = BD.TraerAlumnos();
+        ViewBag.LAlumnos = ListaAlumnos; 
+        List<Alumnos> ListaNotas = BD.TraerNotas();
+        ViewBag.LNotas = ListaNotas; 
+        ViewBag.gajo=legajo;
+        return View();
+
     }
 
     public IActionResult Privacy()

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Alumno</title>
+</head>
+<body>
+    @{
+        foreach(Alumnos alumno in @ViewBag.LAlumnos){
+            if(alumno.Legajo==@ViewBag.gajo){
+                <p>@alumno.Nombre</p>
+                <p>@alumno.Apellido </p>
+                <p>@alumno.Curso </p>
+                <p>@ViewBag.LNota </p>
+            }
+        }
+    }
+</body>
+</html>
