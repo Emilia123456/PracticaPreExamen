@@ -28,7 +28,7 @@ public class HomeController : Controller
         List<Alumnos> ListaAlumnos = BD.TraerAlumnos();
         ViewBag.LAlumnos = ListaAlumnos; 
         List<Alumnos> ListaNotas = BD.TraerNotas();
-        ViewBag.LNotas = ListaNotas; 
+        ViewBag.Notas = ListaNotas; 
         ViewBag.gajo=legajo;
         return View();
 
