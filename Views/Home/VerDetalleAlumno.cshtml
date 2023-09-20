@@ -12,6 +12,13 @@
                 <p>@alumno.Nombre</p>
                 <p>@alumno.Apellido </p>
                 <p>@alumno.Curso </p>
+                <p>@alumno.Promedio </p>
+                if(@alumno.Promedio<6){
+                    <p>Desaprobado</p>
+                }else{
+                    <p>Aprobado</p>
+                }
+                <p>@alumno.Especialidad </p>
             }
         }
     }
