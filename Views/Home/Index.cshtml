@@ -10,22 +10,58 @@
     <title>MostrarAlumnos</title>
 </head>
 <body>
+    @* muestro los alumnos *@
     <div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Alumnos
-  </div>
-  <ul class="list-group list-group-flush">
-    @{
-        foreach(Alumnos alumno in @ViewBag.LAlumnos){
-            <li 
-            class="list-group-item">@alumno.Nombre @alumno.Apellido 
-            <a href='@Url.Action("VerDetalleAlumno", "Home", new { legajo = alumno.Legajo})'>Más información</a>
-            </li>
-            
-        }
-    }
-    
-  </ul>
-</div>
+        <div class="card-header">
+            Todos los alumnos
+        </div>
+        <ul class="list-group list-group-flush">
+            @{
+                foreach(Alumnos alumno in @ViewBag.LAlumnos){
+                    <li 
+                    class="list-group-item">@alumno.Nombre @alumno.Apellido 
+                    <a href='@Url.Action("VerDetalleAlumno", "Home", new { legajo = alumno.Legajo})'>Más información</a>
+                    </li>
+                    
+                }
+            }
+        </ul>
+    </div>
+
+    @* muestro los alumnos aprobados *@
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            Alumnos aprobados
+        </div>
+        <ul class="list-group list-group-flush">
+            @{
+                foreach(Alumnos alumno in @ViewBag.aprobados){
+                    <li 
+                    class="list-group-item">@alumno.Nombre @alumno.Apellido 
+                    <a href='@Url.Action("VerDetalleAlumno", "Home", new { legajo = alumno.Legajo})'>Más información</a>
+                    </li>
+                    
+                }
+            }
+        </ul>
+    </div>
+
+    @* muestro los desaprobados *@
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+            Alumnos desaprobados
+        </div>
+        <ul class="list-group list-group-flush">
+            @{
+                foreach(Alumnos alumno in @ViewBag.desaprobados){
+                    <li 
+                    class="list-group-item">@alumno.Nombre @alumno.Apellido 
+                    <a href='@Url.Action("VerDetalleAlumno", "Home", new { legajo = alumno.Legajo})'>Más información</a>
+                    </li>
+                    
+                }
+            }
+        </ul>
+    </div>
 </body>
 </html>

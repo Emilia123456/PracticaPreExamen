@@ -18,6 +18,10 @@ public class HomeController : Controller
     {
         List<Alumnos> ListaAlumnos = BD.TraerAlumnos();
         ViewBag.LAlumnos = ListaAlumnos; 
+        List<Alumnos> ListaDesaprobados = BD.Desaprobados();
+        ViewBag.Desaprobados = ListaDesaprobados; 
+        List<Alumnos> ListaAprobados = BD.Aprobados();
+        ViewBag.Aprobados = ListaAprobados; 
         return View();
     }
 
